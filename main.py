@@ -1,13 +1,13 @@
 import logging
 
-from flask import Flask
+from flask import Flask, redirect
 
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'https://github.com/zqureshi/snippets', 302
+    return redirect('https://github.com/zqureshi/snippets')
 
 @app.errorhandler(500)
 def server_error(e):
